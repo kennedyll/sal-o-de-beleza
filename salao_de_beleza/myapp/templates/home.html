@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+<meta charset="utf-8">
+
+<!--cabeça-->
+
+<head>
+
+    <title>BET'STYLES</title>
+    <!-- <link rel="stylesheet" href="https://kennedyll.github.io/BET/style.css">-->
+    <link rel="stylesheet" href="{% static 'css/teste.css' %}">
+
+</head>
+
+<!--corpo-->
+
+<body class="body">
+
+    <!--menu-->
+
+    <nav>
+        <a class="logo" href="/">BET'STYLES</a>
+
+        <ul class="nav-list" id="menu" style="display: none;">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./info.html">Sobre nós</a></li>
+            <li><a href="https://www.instagram.com/neymarjr/">Contato</a></li>
+            <li><a href="#">App</a></li>
+        </ul>
+
+
+        <div class="search-box"></div>
+        <input type="text" name="" placeholder="Faça sua pesquisa">
+
+
+
+        <input id="hamburguer" type="checkbox" style="display: none;">
+
+        <label for="hamburguer">
+            <div class="hamburguer" onclick="show()"></div>
+        </label>
+        
+            </nav>
+
+            <div class="pop-up" id="pop-up" onclick="fechar()">
+                <div class="pop-up-content">
+                    <div class="pop-up-single">
+                        <img src="./p.jfif"/>
+                        <button class="action" onclick="fechar()">X</button>
+                    </div>
+                </div>
+                <!--pop-up-content-->
+            </div>
+            <!--pop-up-->
+
+
+    <!--div produtos-->
+    
+    <div class="div-produto" id="q1">
+        <img src="https://i.pinimg.com/originals/0a/c2/1f/0ac21f4e4be2bc1bb5cbf53374b6b58f.jpg">
+    </div>
+    <div class="div-produto" id="q2">
+        <img src="https://i.pinimg.com/originals/53/e5/e4/53e5e4158bcfbc816a5dce44420143e1.jpg">
+    </div>
+    <div class="div-produto" id="q3">
+        <img src="https://i.pinimg.com/originals/f7/96/7a/f7967a88c208d919b7db464fa62500f9.jpg">
+    </div>
+    <div class="div-produto" id="q4">
+        <img src="https://65485.cdn.simplo7.net/static/65485/sku/sportsdovale-camisa-manchester-city-21-22-versao-torcedor-treino-c--p-1630198750888.jpg">
+    </div>
+    <div class="div-produto" id="q5">
+        <img src="https://cf.shopee.com.br/file/84084ccf351c17e3f7ecad7ed8d64776">
+    </div>
+    <div class="div-produto" id="q6">
+        <img src="https://torcedorfanaticostore.com/wp-content/uploads/2020/11/B2FC64CF-41F1-45BE-993D-E9F69C988CB7.png">
+    </div>
+    
+
+    <!--Rodapé-->
+
+    <footer>
+        <div class="footer-content">
+            <h3>BET' BRASIL</h3>
+            <p>Bet'Styles do Brasil LTDA - CNPJ/MF nº 48.384.418/0041-67 – Inscrição Estadual  361.751.027.221 Endereço: Rua Campo das Rosas nº 131, Bairro Cajupiranga - RN, CEP 09623-015 Atendimento ao cliente: atendimentobet'styles@bet.com  / 08102 561 752 ou 84 1526 9800</p>
+
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2022. designed by <span>BET' STYLES</span></p>
+        </div>
+
+    </footer>
+</body>
+
+<!--script/menu hamburguer-->
+
+<script>
+    function show() {
+        let show = document.getElementById("menu").style.display
+        if (show == "none") {
+            document.getElementById("menu").style.display = "inline"
+        } else {
+            show = document.getElementById("menu").style.display
+            document.getElementById("menu").style.display = "none"
+        }
+        console.log(show)
+    }
+
+</script>
+
+</html>
