@@ -1,0 +1,26 @@
+{% load static %}
+
+<html>
+    <head>
+
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+
+        <link rel="stylesheet" href="{% static 'css/teste.css' %}">
+
+    </head>
+
+    <div class="header"> CABEÇALHO </div>
+
+    <body>
+        {% block body %}
+        {% endblock %}
+    </body>
+
+    <footer>
+        <div class="footer"> RODAPE </div>
+    </footer>
+
+</html>
