@@ -20,6 +20,17 @@
 
 <body class="body">
 
+{% block body%}
+
+    <div class="conteudo">
+        teste de leitura <br>
+        {% for c in usuario %}
+            {{c.usuario}} <br>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
     <!--menu-->
 
     <nav>
