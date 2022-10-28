@@ -35,7 +35,7 @@ class LoginForm(ModelForm):
         widgets = {'password': forms.PasswordInput(),}
         fields = ['usuario', 'senha']
 
-class ComentarioForm(ModelForm):
-    class meta:
+class ComentariosForm(ModelForm):
+    class Meta:
         model = Comentario
         fields = ['comentario']

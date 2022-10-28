@@ -1,7 +1,7 @@
 from calendar import c
 from plistlib import UID
 from django.shortcuts import render, redirect, HttpResponse
-from myapp.forms import UsersForm, LoginForm, ComentarioForm
+from myapp.forms import UsersForm, LoginForm, ComentariosForm
 from myapp.models import Usuario, Comentario
 
 # Create your views here.
@@ -77,17 +77,21 @@ def dolog(request):
 def comentario(request):
     data = {}
     if request.method == 'POST':
-        c = Comentario(usuario=Usuario.objects.get(id=request.session['uid']), comentario=request.POST['comentario'])
-        c.save
+        c = Comentario(usuario=Usuario.objects.get(id=request.session['uid']),comentario=request.POST['comentario'])
+        c.save()
         return redirect('comentario')
     else:
-        data['form'] = ComentarioForm()
+        data['forms'] = ComentariosForm()
         data['history'] = Comentario.objects.filter(usuario=request.session['uid'])
     return render(request, 'comentario.html', data)
 
 def edit_coment(request, id):
     c = Comentario.objects.get(id=id)
     if request.method == 'POST':
-        f = ComentarioForm(request.POST, instance=c)
+        f = ComentariosForm(request.POST, instance=c)
         f.save()
-    return render(request, 'comentario.html', {'form:':f})
+        return redirect('comentario')
+
+    else:
+        f = ComentariosForm(instance=c)
+        return render(request, 'comentario.html', {'forms':f})

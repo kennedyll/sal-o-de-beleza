@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coments</title>
 </head>
+{% block content %}
 <body>
 
     <form name="coment" method="post" >
         <h1>COMENTA AI MEO NOBRE</h1>
 
         {% csrf_token %}
-        {{form.comentario}}
+        {{forms.comentario}}
         <br>
 
         <input type="submit" value="Comentar">
@@ -21,15 +22,18 @@
 
 <br> ------------------------------------------ <br><br>
 <b> ---seus comentarios--- <b>
+    {% if history %}
 
-    {% for c in history %}
-    
-    <br>{{c.comentario}} -- {{c.usuario.usuario}} <a href="{% url 'edit_coment' c.id %}">[EDITAR]</a>
+        {% for c in history %}
 
-    {% endfor %}
+            <br>{{c.comentario}} -- {{c.usuario.usuario}} <a href="{% url 'edit_coment' c.id %}">[EDITAR]</a>
 
-{% endif %}
+        {% endfor %}
+    {% endif %}
+
 
 
 </body>
+{% endblock %}
+
 </html>
