@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+</head>
+<body>
+    <div class="div_total"></div>
+        <h1>PERFIL</h1>
+        <form class="registro_form" method="post" action="doupdate">
+            {% csrf_token %}
+            <div class="nothing">usuario: {{perfil.usuario}}</div><br>
+            <div class="nothing">email: {{perfil.email}}</div>
+            <div class="nothing">senha: {{perfil.senha}}</div>
+            <div class="nothing">data_nasc: {{perfil.data_nasc}}</div>
+
+        </form>
+ 
+</body>
+</html>

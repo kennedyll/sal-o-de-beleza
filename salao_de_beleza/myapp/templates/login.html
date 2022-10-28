@@ -39,40 +39,29 @@
 
         <div class="geral"> <!-- div geral -->
 
-            <h1>CADASTRO</h1>
+            <h1>LOGIN</h1>
 
             {% block body %}
 
-            <form class="form" name="cadastro" method="post" action="/docad/"> <!-- form: codigo para gerar formulário-->
+            <form class="form"  name="login" method="post" action="/dolog/"> <!-- form: codigo para gerar formulário-->
 
              {% csrf_token %}
 
                 <div class="Usuario">
-                    {{form.usuario}}
-
-
-                </div>
-
-                <div class="Email">
-                    {{form.senha}}
+                    {{login.usuario}}
 
 
                 </div>
 
                 <div class="senha">
-                    {{form.nome}}
+                    {{login.senha}}
 
 
                 </div>
 
-
-                <div class="comfirme">
-
-                   {{form.ultimo_nome}}
-                </div>
 
             <div class="criar">
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="entrar">
             </div>
 
             </form>
